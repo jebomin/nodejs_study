@@ -1,5 +1,6 @@
 function sayHello() {
   console.log("hello");
+  console.log("bomin");
 }
 
 function calculate(x, y) {
