@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\photo\\app.js",
+      "program": "${workspaceFolder}\\6-express\\app.js",
       "args": ["test"],
       "runtimeExecutable": "node",
       "restart": true
