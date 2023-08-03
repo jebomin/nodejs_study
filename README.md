@@ -3,7 +3,7 @@
 ### 🔗 공부한 내용 정리
 https://www.notion.so/Node-Course-Template-da88b11c63634031b87ce375f4e6d1fa
 
-### 📕 1-node
+### 📂 1-node
 노드 APIs에서 자주 쓰이는 유용한 모둘 들에 대해 알아보기<br>
 글로벌, 콘솔로그, 운영체제, 프로세스, 파일, 버퍼 등 다양한 모듈 직접 사용🔥
 
