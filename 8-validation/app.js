@@ -7,9 +7,9 @@ app.use(express.json());
 const validate = (req, res, next) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
-    return next();
+    return next(); //에러가 없다면 다음 미들웨어
   }
-  return res.status(400).json({ message: errors.array()[0].msg });
+  return res.status(400).json({ message: errors.array()[0].msg }); //에러가 있으면 다음으로 넘어가지 않고 response를 보냄
 };
 
 app.post(
@@ -27,10 +27,6 @@ app.post(
     validate,
   ],
   (req, res, next) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ message: errors.array() });
-    }
     console.log(req.body);
     res.sendStatus(201);
   }
@@ -40,10 +36,6 @@ app.get(
   "/:email",
   [param("email").isEmail().withMessage("이메일 입력해요"), validate],
   (req, res, next) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ message: errors.array() });
-    }
     res.send("💌");
   }
 );
