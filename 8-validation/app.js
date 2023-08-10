@@ -18,10 +18,11 @@ app.post(
     body("name")
       .notEmpty()
       .withMessage("이름을 입력해")
-      .trim()
-      .isLength({ min: 2 })
+      .trim() //공백이 있다면 공백을 모두 제거
+      .isLength({ min: 2 }) //trim을 한 다음에 길이 판단해야함(순서가 중요!)
       .withMessage("이름은 두글자 이상!"),
     body("age").notEmpty().isInt().withMessage("숫자를 입력해"),
+    //normalizeEmzail : email을 소문자로
     body("email").isEmail().withMessage("이메일 입력해요").normalizeEmail(),
     body("job.name").notEmpty(),
     validate,
